@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  margin-left: 5%;
+  /* margin-right: 5%; */
+  max-width: 350px;
+}
+
+.list {
+  margin: 2%;
+  /* max-width: 360, */
+  /* backgroundColor: theme.palette.background.paper, */
+}
