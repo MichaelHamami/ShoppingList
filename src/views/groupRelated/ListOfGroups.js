@@ -10,10 +10,6 @@ export default class ListOfGroups extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <GroupCard />
-      </div>
-    );
+    return <div>{/* <GroupCard /> */}</div>;
   }
 }

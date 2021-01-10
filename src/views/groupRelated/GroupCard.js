@@ -29,6 +29,7 @@ export default class GroupCard extends Component {
 
     this.deleteAlert = this.deleteAlert.bind(this);
     this.openChange = this.openChange.bind(this);
+    this.deleteGroup = this.deleteGroup.bind(this);
   }
 
   deleteAlert() {
@@ -44,12 +45,18 @@ export default class GroupCard extends Component {
     console.log(this.state.open);
   }
 
+  deleteGroup(event) {
+    event.preventDefault();
+    this.props.removeGroup(this.props.index);
+    console.log(this.props.index);
+    this.openChange(event);
+  }
   render() {
     return (
       <div>
-        <CCard>
+        <CCard style={{ maxWidth: "350px" }}>
           <CCardHeader>
-            <a href="#">Group</a>
+            <a href="#">{this.props.name}</a>
             <div className="card-header-actions">
               <CLink className="card-header-action">
                 <DeleteIcon
@@ -72,7 +79,7 @@ export default class GroupCard extends Component {
                   <Button onClick={this.openChange} color="primary">
                     Cancel
                   </Button>
-                  <Button onClick={this.openChange} color="primary" autoFocus>
+                  <Button onClick={this.deleteGroup} color="primary" autoFocus>
                     Leave
                   </Button>
                 </DialogActions>

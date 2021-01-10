@@ -3,8 +3,10 @@ import { CCol, CRow } from "@coreui/react";
 // import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 
 // import GroupList from "../groupRelated/GroupList.js";
-import ListOfGroups from "../groupRelated/ListOfGroups";
+import GroupMain from "../groupRelated/GroupMain";
 import GroupInfo from "../groupRelated/GroupInfo.js";
+import GroupCard from "../groupRelated/GroupCard";
+import User from "../userRelated/User";
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -16,12 +18,14 @@ export default class Dashboard extends Component {
   render() {
     return (
       <>
-        <CRow>
-          <CCol xs="12" sm="6" md="4">
-            <ListOfGroups />
-            <GroupInfo />
-          </CCol>
-        </CRow>
+        <GroupMain />
+        <GroupInfo />
+        <User
+          email={"email"}
+          avatar={"avatar"}
+          role={"role"}
+          username={"username"}
+        />
       </>
     );
   }
